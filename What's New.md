@@ -2,7 +2,11 @@
 
 ## V1.66 Beta
 
-- The cassette screensaver now uses a real cassette photo with animated reels.
+- Added original cassette and reel-to-reel animations, and updated the rainy cafe.
+- Granular grains can last up to four seconds, cross slice boundaries and use
+  up to four simultaneous layers. Hold X on SAMPLE to preview.
+- Random flow varies multiple settings in sync with the project BPM; Wow &
+  Flutter now processes the combined grain output.
 - Added granular Wow & Flutter and a Tracking switch for occasional tape-like
   reverse playback.
 - Main mixer D-pad volume steps are now 1% horizontally and 10% vertically.

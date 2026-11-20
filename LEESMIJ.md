@@ -47,12 +47,9 @@ tien MIDI-tracks toe.
 
 Tijdens het afspelen verschijnt na enige tijd een screensaver. B wisselt de
 animatie; A of de D-pad brengt je terug. Start blijft afspelen en pauzeren.
-De cassette-animatie gebruikt een foto van een echt bandje; de spoelen draaien
-tijdens afspelen en stoppen bij pauze.
-Foto: Inpriva, gecorrigeerd door Ubcule,
-[CC0](https://creativecommons.org/publicdomain/zero/1.0/);
-[bron](https://commons.wikimedia.org/wiki/File:Digital8_%26_Compact_Cassette_vert_(cropped_etc).jpg).
-De foto is uitgesneden en de spoelen zijn geanimeerd.
+De zelf getekende cassette en bandrecorder draaien tijdens het afspelen en
+stoppen bij pauze. Het regenachtige koffiehuis toont regen op het raam, bliksem
+en voorbijgangers.
 
 ## Geluid, patronen en opslaan
 
@@ -150,12 +147,13 @@ op Select en kies bij **SAMPLE** een bestand met B of B + links/rechts.
 De keuzelijst bevat ook **NONE**, waarmee je de granular-sample leegmaakt. Audio
 wordt voor afspelen naar mono omgezet; het origineel blijft ongewijzigd.
 Start speelt of stopt met het project; opnieuw starten begint de grainreeks
-opnieuw.
+opnieuw. Houd X bij **SAMPLE** ingedrukt om de gekozen sample te beluisteren;
+loslaten stopt het voorbeeld.
 
 Houd op de waveform B + D-pad vast voor Position, Size, Random, Flow, Pitch,
 Repeat, Smartbeat, Slices en Wow & Flutter; druk op B bij Tracking om die te
-schakelen. Wow & Flutter voegt langzame en snelle bandachtige pitchvariatie toe.
-Tracking speelt af en toe een grain kort sneller achteruit, binnen de slice.
+schakelen. Wow & Flutter voegt langzame en snelle bandachtige pitchvariatie toe
+aan de samengevoegde grains. Tracking speelt af en toe een grain kort sneller achteruit.
 Beide staan standaard uit en worden met het project opgeslagen. Selecteer
 Position en houd B + links/rechts vast
 om de blauwe marker langzaam te verplaatsen; langer vasthouden versnelt de
@@ -165,7 +163,8 @@ vanaf de blauwe marker tot het einde van de sample. Slices worden over dat
 gebied verdeeld en bewegen dus mee met de marker. Geen grain leest audio
 vóór de marker. De andere lijnen tonen het
 brongebied van de huidige grain en de bewegende afspeelpositie. Size loopt van
-20 ms tot 1 seconde; opgeslagen size-instellingen gebruiken de nieuwe schaal.
+20 ms tot 4 seconden. Grains kunnen voorbij een slicegrens lopen en herhalen
+bij het einde van het afspeelgebied. Oude opgeslagen instellingen behouden hun duur.
 Pitch verandert
 met links/rechts in cents en omhoog/omlaag in halve tonen. De inhoud wordt
 getransponeerd zonder de ingestelde grainduur te wijzigen; dit is geen
@@ -177,7 +176,11 @@ Flow gaat vooruit, achteruit, pingpong, random, houdt één slice vast of gebrui
 de ritme-editor. Met **EDIT SLICES** pas je voorgestelde grenzen aan;
 **AUTO SLICES** vervangt ze door nieuwe voorstellen. In **EDIT RHYTHM** kies
 je slices of rusten. De **Random**-knop verschuift grain-startpunten willekeurig
-vooruit richting het einde van de slice; Random flow kiest willekeurige slices.
+vooruit richting het einde van de slice. Random flow kiest willekeurig aantallen
+slices, pitch, richting, grootte, herhalingen, tracking, wow/flutter, lagen en
+BPM-gesynchroniseerde snelheden. Andere granular-instellingen zijn dan
+vergrendeld, behalve Position en Flow; de huidige sample blijft te beluisteren.
+Met **GRAIN LAYERS** in het menu kies je één tot vier gelijktijdige grains.
 Smartbeat schakelt de Random-knop uit en start op de geanalyseerde piek het
 dichtst bij de slice-start, of op de dichtstbijzijnde piek na de marker als
 die slice geen piek bevat. Zijn er geen geanalyseerde pieken op of na de

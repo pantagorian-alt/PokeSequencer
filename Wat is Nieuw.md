@@ -2,8 +2,12 @@
 
 ## V1.66 Beta
 
-- De cassettescreensaver gebruikt nu een foto van een echt bandje met
-  draaiende spoelen.
+- Zelf getekende cassette en bandrecorder toegevoegd; het regenachtige
+  koffiehuis is vernieuwd.
+- Grains duren maximaal vier seconden, lopen voorbij slicegrenzen en hebben
+  maximaal vier gelijktijdige lagen. Houd X bij SAMPLE vast voor een voorbeeld.
+- Random flow varieert meerdere instellingen op het projecttempo; Wow & Flutter
+  bewerkt nu de samengevoegde grains.
 - Wow & Flutter en een Tracking-schakelaar voor af en toe bandachtig
   achteruit afspelen toegevoegd aan granular.
 - Volumestappen in de hoofdmixer zijn nu 1% horizontaal en 10% verticaal.

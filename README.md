@@ -48,11 +48,8 @@ with four fixed tracks: **Drums**, **Bass Synth**, **Wavetable Synth** and
 A screensaver appears after a period of inactivity during playback. B cycles
 animations; A or the D-pad returns to the previous screen. Start still controls
 playback.
-The cassette animation uses a real cassette photograph; its reels turn during
-playback and stop on pause.
-Photo: Inpriva, corrected by Ubcule, [CC0](https://creativecommons.org/publicdomain/zero/1.0/);
-[source](https://commons.wikimedia.org/wiki/File:Digital8_%26_Compact_Cassette_vert_(cropped_etc).jpg).
-The image was cropped and its reels animated.
+The original cassette and reel-to-reel animations turn during playback and stop
+on pause. The rainy cafe includes rain on the glass, lightning and passers-by.
 
 ## Sounds, patterns and saving
 
@@ -141,12 +138,13 @@ per file). Select **Granular** to open its waveform, then press Select and
 choose a file on **SAMPLE** with B or hold B + left/right. The sample cycle
 also includes **NONE**, which clears the granular sample. Audio is converted
 to mono for playback; the original stays unchanged. Press Start to play or
-stop with the project. Restarting begins the grain sequence again.
+stop with the project. Restarting begins the grain sequence again. Hold X on
+**SAMPLE** to preview the selected sample; release X to stop.
 
 On the waveform, hold B + D-pad to adjust Position, Size, Random, Flow, Pitch,
 Repeat, Smartbeat, Slices and Wow & Flutter; press B on Tracking to toggle it.
-Wow & Flutter adds slow and fast tape-like pitch variation. Tracking occasionally
-reverses a grain briefly at a faster speed, within its slice. Both default to off
+Wow & Flutter adds slow and fast tape-like pitch variation to the combined grain
+output. Tracking occasionally reverses a grain briefly at a faster speed. Both default to off
 and are saved with the project. Select Position and hold B + left/right to move
 the blue marker slowly, accelerating as you hold; L/R zoom from 1x to 16x.
 Position sets the start of the playable region: slices, flow, rhythm and
@@ -154,7 +152,8 @@ Smartbeat operate only between the blue marker and the end of the sample.
 Slices are distributed over that region, so moving the marker moves their
 actual positions too. No grain reads audio before the marker.
 The other lines show the current grain's source region and moving playhead.
-Size ranges from 20 ms to 1 second; saved size settings use the new range.
+Size ranges from 20 ms to 4 seconds. Grains can continue past a slice boundary
+and wrap at the end of the playable region. Older saved sizes retain their duration.
 Pitch uses cents horizontally
 and semitones vertically; it transposes the grain content without changing the
 selected grain duration, not a full-song time-stretch.
@@ -166,7 +165,11 @@ rhythm editor. **EDIT SLICES** adjusts suggested boundaries; **AUTO SLICES**
 replaces them with new suggestions. **EDIT RHYTHM** selects slices or rests.
 The **Random** knob scatters grain starts forward from the chosen position
 towards the end of the slice; it is separate from Random flow, which chooses
-random slices. Smartbeat disables the Random knob and starts on the analysed
+random slice counts, pitch, direction, size, repeats, tracking, wow/flutter,
+layers and BPM-synchronised rates. In Random flow, other granular controls are
+locked except Position and Flow; the current sample can still be previewed.
+**GRAIN LAYERS** in the menu sets one to four simultaneous grains per event.
+Smartbeat disables the Random knob and starts on the analysed
 peak nearest the slice start, or the nearest peak after the marker if that
 slice has none. If there are no analysed peaks at or after the marker, it
 plays no grains. Its
