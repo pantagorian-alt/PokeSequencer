@@ -1,4 +1,4 @@
-# PokeSequencer V1.66 Beta
+# PokeSequencer V1.75
 
 PokeSequencer is a groovebox and MIDI sequencer for the Anbernic RG40XXV
 running KNULLI. Make drum patterns, bass lines and melodies, or control
@@ -45,11 +45,15 @@ with four fixed tracks: **Drums**, **Bass Synth**, **Wavetable Synth** and
 | Start | Play or pause; restarting begins at step 1 |
 | X / Y in Tracks | Mute / solo the selected track |
 
-A screensaver appears after a period of inactivity during playback. B cycles
+A screensaver appears after 15 seconds of inactivity during playback. B cycles
 animations; A or the D-pad returns to the previous screen. Start still controls
 playback.
+Performance Mode, available from the main menu, provides colored pads for each
+track. While playing, pad changes take effect at the next bar; the screensaver
+stays disabled while Performance Mode is open. Start still controls play/pause.
 The original cassette and reel-to-reel animations turn during playback and stop
-on pause. The rainy cafe includes rain on the glass, lightning and passers-by.
+on pause. The rainy cafe uses a photorealistic scene with animated rain and
+lightning.
 
 ## Sounds, patterns and saving
 
@@ -62,9 +66,9 @@ rates (D), and Delay Tail and Reverb Tail are separate controls. The main menu's
 mixer controls the four instrument tracks and, when enabled, USB Audio IN.
 Select an instrument channel and use X for mute or Y for solo, just as on
 Tracks; MIDI tracks are not shown in the mixer. Audio IN has volume control
-only and is not affected by track mute or solo.
-In the main mixer, hold B and press left/right for 1% volume steps or
-up/down for 10% steps.
+only. In the main mixer, hold B and press left/right for 1% volume steps or
+up/down for 10% steps. Audio IN mute also silences MIDI tracks; Audio IN solo
+plays Audio IN and MIDI tracks while suppressing the built-in instruments.
 Audio IN has its own monitor volume and post-fader dBFS meter; the volume is
 kept for the current app session and does not affect USB recordings. The main
 menu also offers a theme selector.
@@ -99,7 +103,9 @@ the destination track's menu: **paste replaces all existing destination
 notes**. Notes outside the destination length are skipped or shortened. The
 clipboard is cleared when the app closes. The piano roll shows up to 16 steps
 per page and follows playback across pages. It remembers each
-track's vertical position while the project is open. When a loaded track is
+track's vertical position while the project is open. Hold B on an occupied
+note and move the D-pad to delete notes. On a MIDI track, holding B previews
+the note on the connected instrument when USB Audio IN is enabled. When a loaded track is
 opened for the first time, it focuses on an existing note if there is one.
 
 The synth kick Pitch control shifts the complete sound, including the click, by up to
@@ -158,16 +164,20 @@ Pitch uses cents horizontally
 and semitones vertically; it transposes the grain content without changing the
 selected grain duration, not a full-song time-stretch.
 
-Select opens the granular menu. **BPM SYNC** uses the project BPM; when off,
-**FREE BPM** controls the grain clock. **RATE** selects the interval. Flow
+Select opens the granular menu. **PARAMETERS** opens the sidechain, clock and
+grain controls: **SIDECHAIN** ducks grains on kick hits at 0%, 10%, 50% or
+100%; **BPM SYNC** uses the project BPM; when off, **FREE BPM** controls the
+grain clock. **RATE** selects the interval and **GRAIN LAYERS** sets the
+simultaneous grains per event. Flow
 can move forward, reverse, ping-pong, randomly, hold one slice or use the
 rhythm editor. **EDIT SLICES** adjusts suggested boundaries; **AUTO SLICES**
-replaces them with new suggestions. **EDIT RHYTHM** selects slices or rests.
+replaces them with new suggestions. **EDIT RHYTHM** selects slices or rests;
+X cycles through five presets, which can then be edited manually.
 The **Random** knob scatters grain starts forward from the chosen position
 towards the end of the slice; it is separate from Random flow, which chooses
 random slice counts, pitch, direction, size, repeats, tracking, wow/flutter,
-layers and BPM-synchronised rates. In Random flow, other granular controls are
-locked except Position and Flow; the current sample can still be previewed.
+layers and BPM-synchronised rates. In Random flow, waveform controls other than
+Position and Flow are locked; the granular menu remains available.
 **GRAIN LAYERS** in the menu sets one to four simultaneous grains per event.
 Smartbeat disables the Random knob and starts on the analysed
 peak nearest the slice start, or the nearest peak after the marker if that

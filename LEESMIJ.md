@@ -1,4 +1,4 @@
-# PokeSequencer V1.66 Beta
+# PokeSequencer V1.75
 
 PokeSequencer is een groovebox en MIDI-sequencer voor de Anbernic RG40XXV met
 KNULLI. Maak drumritmes, baslijnen en melodieën, of stuur externe instrumenten
@@ -45,11 +45,15 @@ tien MIDI-tracks toe.
 | Start | Afspelen of pauzeren; hervatten begint bij stap 1 |
 | X / Y in Tracks | Geselecteerde track muten / solo zetten |
 
-Tijdens het afspelen verschijnt na enige tijd een screensaver. B wisselt de
+Tijdens het afspelen verschijnt na 15 seconden zonder invoer een screensaver. B wisselt de
 animatie; A of de D-pad brengt je terug. Start blijft afspelen en pauzeren.
-De zelf getekende cassette en bandrecorder draaien tijdens het afspelen en
-stoppen bij pauze. Het regenachtige koffiehuis toont regen op het raam, bliksem
-en voorbijgangers.
+Performance Mode staat in het hoofdmenu en toont gekleurde vakjes voor iedere
+track. Tijdens het afspelen gaat een track pas bij de volgende maat aan of uit;
+zolang Performance Mode open is, start de screensaver niet. Start blijft
+afspelen en pauzeren.
+De cassette- en bandrecorderanimaties draaien tijdens het afspelen en stoppen
+bij pauze. Het regenachtige koffiehuis gebruikt een fotorealistische scène met
+bewegende regen en bliksem.
 
 ## Geluid, patronen en opslaan
 
@@ -63,10 +67,11 @@ afzonderlijke regelaars.
 De hoofdmixer in het hoofdmenu regelt de vier instrumenttracks en, indien
 ingeschakeld, USB Audio IN. Selecteer een instrumentkanaal en gebruik X voor
 mute of Y voor solo, net als bij Tracks; MIDI-tracks staan niet in de mixer.
-Audio IN heeft alleen volumeregeling en wordt niet door track-mute of -solo
-beïnvloed. Audio IN heeft een eigen meeluistervolume en
+Audio IN heeft alleen volumeregeling en een eigen meeluistervolume en
 dBFS-meter na de volumeregelaar; het volume blijft tijdens de huidige
-appsessie behouden en beïnvloedt USB-opnames niet. Het hoofdmenu bevat ook de
+appsessie behouden en beïnvloedt USB-opnames niet. Audio IN-mute dempt ook de
+MIDI-tracks; Audio IN-solo speelt Audio IN en MIDI-tracks af en dempt de
+ingebouwde instrumenten. Het hoofdmenu bevat ook de
 themakeuze.
 Houd in de hoofdmixer B vast en gebruik links/rechts voor volumestappen van 1%
 of omhoog/omlaag voor stappen van 10%.
@@ -103,7 +108,10 @@ brontrack en plak via het menu van de doeltrack: **plakken vervangt alle
 bestaande noten** van de doeltrack. Noten buiten de doelpatroonlengte worden
 overgeslagen of ingekort. De kopie verdwijnt bij het afsluiten. De pianorol
 toont maximaal 16 stappen per pagina en volgt de pagina tijdens afspelen. Hij
-onthoudt per track de verticale positie zolang het project open is. Bij de
+onthoudt per track de verticale positie zolang het project open is. Houd B op
+een bestaande noot vast en verplaats met de D-pad om noten te verwijderen. Op
+een MIDI-track beluistert B ingedrukt de noot via het aangesloten instrument
+wanneer USB Audio IN is ingeschakeld. Bij de
 eerste keer openen van een geladen track staat een bestaande noot in beeld,
 als die er is.
 
@@ -170,16 +178,20 @@ met links/rechts in cents en omhoog/omlaag in halve tonen. De inhoud wordt
 getransponeerd zonder de ingestelde grainduur te wijzigen; dit is geen
 volledige timestretch van het hele bestand.
 
-Select opent het granular-menu. **BPM SYNC** gebruikt het projecttempo; staat
-dit uit, dan bepaalt **FREE BPM** de grainklok. **RATE** bepaalt de tussenruimte.
+Select opent het granular-menu. **PARAMETERS** opent de sidechain-, klok- en
+graininstellingen: **SIDECHAIN** verlaagt het grainvolume bij kickslagen met
+0%, 10%, 50% of 100%; **BPM SYNC** gebruikt het projecttempo; staat dit uit,
+dan bepaalt **FREE BPM** de grainklok. **RATE** bepaalt de tussenruimte en
+**GRAIN LAYERS** het aantal gelijktijdige grains per gebeurtenis.
 Flow gaat vooruit, achteruit, pingpong, random, houdt één slice vast of gebruikt
 de ritme-editor. Met **EDIT SLICES** pas je voorgestelde grenzen aan;
 **AUTO SLICES** vervangt ze door nieuwe voorstellen. In **EDIT RHYTHM** kies
-je slices of rusten. De **Random**-knop verschuift grain-startpunten willekeurig
+je slices of rusten; met X wissel je tussen vijf ritmevoorbeelden, waarna je
+de stappen ook handmatig kunt aanpassen. De **Random**-knop verschuift grain-startpunten willekeurig
 vooruit richting het einde van de slice. Random flow kiest willekeurig aantallen
 slices, pitch, richting, grootte, herhalingen, tracking, wow/flutter, lagen en
-BPM-gesynchroniseerde snelheden. Andere granular-instellingen zijn dan
-vergrendeld, behalve Position en Flow; de huidige sample blijft te beluisteren.
+BPM-gesynchroniseerde snelheden. De overige knoppen op het waveform-scherm zijn
+dan vergrendeld, behalve Position en Flow; het granular-menu blijft beschikbaar.
 Met **GRAIN LAYERS** in het menu kies je één tot vier gelijktijdige grains.
 Smartbeat schakelt de Random-knop uit en start op de geanalyseerde piek het
 dichtst bij de slice-start, of op de dichtstbijzijnde piek na de marker als

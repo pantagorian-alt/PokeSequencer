@@ -1,9 +1,22 @@
 # Wat is Nieuw
 
-## V1.66 Beta
+## V1.75
 
-- Zelf getekende cassette en bandrecorder toegevoegd; het regenachtige
-  koffiehuis is vernieuwd.
+- Screensaver start na 15 seconden; onnodig herhaald tekenen van regen in het
+  koffiehuis verminderd.
+- Performance Mode toegevoegd met een vakje per track; tijdens het afspelen
+  worden wijzigingen bij de volgende maat toegepast en blijft de screensaver uit.
+- Granular-parameters bevatten nu sidechain-ducking op kickslagen,
+  kloktempo en grainlagen. Audio IN-mute/solo bepaalt ook of MIDI hoorbaar is.
+- Noten verwijderen in de pianorol, MIDI-noten beluisteren en een melding om
+  USB Audio IN in te schakelen wanneer een USB-MIDI-apparaat verbindt.
+- Granular-menu blijft bruikbaar bij Random flow; niet-beschikbare
+  waveformknoppen worden overgeslagen. Edit Rhythm heeft vijf X-presets.
+- Tracks en hoofdmixer tonen de kwartnoot in 4/4; de USB-verbindingsstatus staat
+  gecentreerd onder de twee MIDI / USB-regelaars, zonder statusbalk.
+- Het getekende regenachtige koffiehuis vervangen door een fotorealistische
+  scène; bewegende regen en bliksem zijn behouden.
+- De Clear Project-keuze in het hoofdmenu opent nu de bevestiging.
 - Grains duren maximaal vier seconden, lopen voorbij slicegrenzen en hebben
   maximaal vier gelijktijdige lagen. Houd X bij SAMPLE vast voor een voorbeeld.
 - Random flow varieert meerdere instellingen op het projecttempo; Wow & Flutter

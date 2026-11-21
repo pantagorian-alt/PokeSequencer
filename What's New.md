@@ -1,8 +1,21 @@
 # What's New
 
-## V1.66 Beta
+## V1.75
 
-- Added original cassette and reel-to-reel animations, and updated the rainy cafe.
+- The screensaver starts after 15 seconds; redundant cafe rain drawing is reduced.
+- Added Performance Mode, with one pad per track and changes quantized to the
+  next bar while playing; it keeps the screensaver off while open.
+- Granular parameters now include kick-triggered sidechain ducking, clock rate
+  and grain layers. Audio IN mute/solo also controls MIDI audibility.
+- Added piano-roll note deletion and MIDI note audition, plus a prompt to enable
+  USB Audio IN when a USB MIDI device connects.
+- The granular menu remains usable in Random flow, disabled waveform controls
+  are skipped, and Edit Rhythm has five X-button presets.
+- Tracks and the main mixer show the quarter-note beat in 4/4; USB connection
+  status is centered below the two MIDI / USB controls without a status bar.
+- Replaced the illustrated rainy cafe with an original photorealistic scene;
+  animated rain and lightning remain.
+- Fixed the Clear Project main-menu action so it opens its confirmation dialog.
 - Granular grains can last up to four seconds, cross slice boundaries and use
   up to four simultaneous layers. Hold X on SAMPLE to preview.
 - Random flow varies multiple settings in sync with the project BPM; Wow &
