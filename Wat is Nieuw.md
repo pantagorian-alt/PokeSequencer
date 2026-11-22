@@ -1,39 +1,61 @@
 # Wat is Nieuw
 
+## V2.06
+
+- Audioreactieve Mirror EQ toegevoegd en de zeven screensavers opnieuw geordend.
+- Oscilloscoop vernieuwd met een randloos, oud en gebogen CRT-beeld.
+- Cassette en bandrecorder starten en stoppen geleidelijk.
+
+## V2.04
+
+- Het tekstlogo in de headers iets dichter bij de paginatitel geplaatst.
+- Duidelijke vierstapsgroepen terug in de pianorol en meer contrast in OP-Who?.
+- Eerste fabriekspatch heet Basic Bass Patch; oude slot-1- en legacy-saves
+  blijven met X en Y bereikbaar in de PokeSynth-laadlijst.
+- Na laden van kits, patches en SysEx-stemmen opent direct de editor.
+- Beatgesynchroniseerde granular-flow Random Smart toegevoegd.
+- Dubbele sidechainregelaars uit parameterpagina's verwijderd.
+- Performance-pads vernieuwd, met staplampjes en X/Y voor mute/solo.
+- Patroonlengtes 4, 8 en 48 toegevoegd, tekstlogo in headers vernieuwd en
+  play/pauze en rotary's in Hellfire en OP-Who? gecorrigeerd.
+
+- Leesbaarder lettertype, duidelijke rotary-selectie en vierstapsgroepen.
+- Twee nieuwe thema's: Hellfire en OP-Who?.
+- Drie FX-pagina's met flanger, compressie en afzonderlijke shimmer.
+- PokeFM opent met Piano 1 en bladert per SysEx-bestand.
+- Nieuwe PokeSynth-fabriekspatches en Basic Synth Kit.
+- Audioreactieve oscilloscoop en vernieuwd spectrumlandschap.
+- Performance-indicatoren verplaatst en dubbele BPM verwijderd.
+
+## V2.02
+
+- De verouderde Wavetable-track en samplemap verwijderd; nieuwe projecten gebruiken PokeFM.
+
+## V2.0
+
+**Een grote update is er!** PokeSequencer heeft een nieuwe uitstraling en
+krachtige nieuwe instrumenten om muziek mee te maken en uit te voeren.
+
+- De bassynth uitgebreid tot PokeSynth met twee oscillatoren en drie parameterpagina's.
+- PokeFM toegevoegd met zes operators, eigen parameterpagina's en import van DX7/Dexed-SysEx.
+- Tape Machine, Studio Forge en Ion Console toegevoegd als nieuwe thema's.
+- Audioreactieve visualizer-screensaver toegevoegd.
+- Opstartanimatie van vier seconden met een geleidelijk verschijnend logo en draaiende leds.
+- Meegeleverde voorbeeldprojecten verwijderd.
+
 ## V1.75
 
-- Screensaver start na 15 seconden; onnodig herhaald tekenen van regen in het
-  koffiehuis verminderd.
+- Screensaver start na 15 seconden.
 - Performance Mode toegevoegd met een vakje per track; tijdens het afspelen
   worden wijzigingen bij de volgende maat toegepast en blijft de screensaver uit.
-- Granular-parameters bevatten nu sidechain-ducking op kickslagen,
-  kloktempo en grainlagen. Audio IN-mute/solo bepaalt ook of MIDI hoorbaar is.
-- Noten verwijderen in de pianorol, MIDI-noten beluisteren en een melding om
-  USB Audio IN in te schakelen wanneer een USB-MIDI-apparaat verbindt.
-- Granular-menu blijft bruikbaar bij Random flow; niet-beschikbare
-  waveformknoppen worden overgeslagen. Edit Rhythm heeft vijf X-presets.
-- Tracks en hoofdmixer tonen de kwartnoot in 4/4; de USB-verbindingsstatus staat
-  gecentreerd onder de twee MIDI / USB-regelaars, zonder statusbalk.
-- Het getekende regenachtige koffiehuis vervangen door een fotorealistische
-  scène; bewegende regen en bliksem zijn behouden.
-- De Clear Project-keuze in het hoofdmenu opent nu de bevestiging.
-- Grains duren maximaal vier seconden, lopen voorbij slicegrenzen en hebben
-  maximaal vier gelijktijdige lagen. Houd X bij SAMPLE vast voor een voorbeeld.
-- Random flow varieert meerdere instellingen op het projecttempo; Wow & Flutter
-  bewerkt nu de samengevoegde grains.
-- Wow & Flutter en een Tracking-schakelaar voor af en toe bandachtig
-  achteruit afspelen toegevoegd aan granular.
-- Volumestappen in de hoofdmixer zijn nu 1% horizontaal en 10% verticaal.
-- Samplekick-pitch toont nu aanpassingen in cents; synthdrumwijzigingen werken
-  direct door op spelende stemmen.
-- De pianorol vergroot en toont maximaal 16 stappen per pagina.
-- Mute en solo voor instrumentkanalen in de hoofdmixer toegevoegd.
-- Sampledrumkits 808, Acoustic en Linndrum toegevoegd; eigen kits kunnen via
-  mappen in `samples/drum/` worden toegevoegd.
-- Clap toegevoegd aan alle drumkits en effecten per drumstem met X schakelbaar.
-- Samplekits staan vooraan in de kitkeuze; sample-decay is ook bij korte
-  samples duidelijk hoorbaar. Opslaan overschrijft geen WAV-bestanden.
-- De standaard basspatch Gnarly start met Attack op 0%.
+- Granular uitgebreid met sidechain, langere grains, lagen, ritmepresets,
+  samplevoorbeelden, Random flow, Wow & Flutter en Tracking.
+- Pianorol verbeterd met noten verwijderen, MIDI-testnoten en 16 stappen per pagina.
+- Samplekits 808, Acoustic en Linndrum, eigen kits, clap en effecten per
+  drumstem toegevoegd.
+- Mute/solo en beatindicatie aan de mixer toegevoegd; volume- en
+  drumpitchbediening verbeterd. Audio IN-mute/solo beïnvloedt ook MIDI.
+- USB-verbindingsinformatie verbeterd en bevestiging bij Clear Project hersteld.
 
 ## V1.64 Beta
 
@@ -50,7 +72,7 @@
 
 ## V1.60 Beta
 
-- De Synthwave-auto blijft na het inhalen op de nieuwe weghelft rijden.
+- Synthwave-screensaver aangepast.
 
 ## V1.58 Beta
 
@@ -90,8 +112,7 @@
   verandert mee.
 - Pianorol-testnoten zijn ook tijdens afspelen hoorbaar; gelijke bass-detune
   keert terug naar het schone, gelijklopende geluid.
-- Outsequenced! gebruikt 256×256-afbeeldingen voor zon, palmen en weg, een
-  ronde zon en rijstrookbewust verkeer.
+- Outsequenced!-screensaver aangepast.
 - Oudere projecten worden geladen met de nieuwe granular-track ertussen.
 - Hoofd-, drum-, bass- en wavetablemenu opnieuw ingedeeld; bass PATCH opent
   de patchbibliotheek. Granular staat in de hoofdmixer.
@@ -108,23 +129,14 @@
 
 - Een ARM64-buildprobleem opgelost waardoor het programma op KNULLI niet kon starten.
 - MIDI Clock en de USB-MIDI-verbindingsstatus staan nu in het nieuwe submenu.
-- Dust Circuit en Glass Pulse hebben duidelijker verschillende drumklanken en
-  fabrieksinstellingen; de overige kenmerken van Afterglow blijven behouden.
-- De kick heeft een snellere beginsweep en toont de dichtstbijzijnde noot en
-  afwijking in cents, met continue fijn- en grofregeling.
-- Pad gebruikt een geloopte CC0-opname van een gestreken cello, een zachtere
-  attack en lange sustain.
-- De faders en dBFS-meters in de hoofdmixer zijn verticaal; de tekst van Delay
-  Ping-pong is even groot als de andere effectteksten.
-- Shimmer verschuift afzonderlijke noten en akkoorden polyfoon een octaaf
-  omhoog, zonder een toonsoort te hoeven bepalen.
+- Drumklanken en kickstemming verbeterd; Pad-sample aangepast.
+- Mixer, effecten en polyfone Shimmer verbeterd.
 
 ## V1.14 Beta
 
 ### Toegevoegd
 
-- PANTA-screensaver met een om de verticale as draaiende N en planeet, die
-  versnellen op de beat, en sterren die op de beat schitteren.
+- PANTA-screensaver toegevoegd.
 
 ### Gewijzigd
 
@@ -139,8 +151,6 @@
   of pianorolnoten van de geselecteerde track.
 - Gepunteerde delaywaarden (D), zoals 1/8D, en een afzonderlijke Reverb Tail
   voor de lengte van de nagalm. Delay Tail blijft de delayherhalingen regelen.
-- Af en toe bliksem op de beat in het regenachtige koffiehuis, met een analoge
-  klok die de systeemtijd volgt.
 
 ### Gewijzigd
 
@@ -153,8 +163,6 @@
   Baby Blues.
 - De effectregelaars zijn overzichtelijker gegroepeerd: de afzonderlijke
   delay- en reverb-Tail staan onder hun eigen effect.
-- De man en de kat zijn uit de koffiehuisanimatie verwijderd; het raam met
-  regen en het stomende koffiekopje blijven.
 
 ## V1.1 Beta
 
@@ -172,8 +180,7 @@
   wavetable-sample verschijnt in de trackbalk.
 - Bananarama kreeg de kleuren van de mockups; het eerdere thema heet Radiation.
   De GUI kreeg afgeronde hoeken en consistentere toetsenhulp.
-- De Outsequenced!-animatie kreeg gedetailleerdere voertuigen. Play/pause laat
-  de screensaver open; de Nederlandse-vlaganimatie is verwijderd.
+- Screensaverbediening aangepast; Nederlandse-vlagscreensaver verwijderd.
 
 ## Tussen V1.01 en V1.1: tussentijdse updates
 

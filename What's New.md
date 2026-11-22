@@ -1,38 +1,62 @@
 # What's New
 
+## V2.06
+
+- Added the audio-reactive Mirror EQ and reordered the seven screensavers.
+- Reworked the oscilloscope as a frameless, aged curved CRT display.
+- Cassette and reel-to-reel mechanisms gradually start and coast to a stop.
+
+## V2.04
+
+- Moved the header wordmark slightly closer to the page title.
+- Restored clear four-step groups in the piano roll and improved OP-Who? contrast.
+- Renamed the first factory sound Basic Bass Patch; old slot-1 and legacy saves
+  remain accessible with X and Y in the PokeSynth load browser.
+- Loading kits, patches and SysEx voices now opens their editor immediately.
+- Added beat-synchronised Random Smart granular flow.
+- Removed duplicate sidechain controls from parameter pages.
+- Redesigned Performance Mode pads, added step lamps and X/Y mute/solo.
+- Added 4, 8 and 48-step pattern options, updated the header logo and
+  corrected Hellfire/OP-Who? transport icons and rotary styling.
+
+- Improved font readability, rotary selection and four-step grouping.
+- Added Hellfire and OP-Who? themes.
+- Three FX pages with flanger, compression and independent shimmer.
+- PokeFM starts with Piano 1 and browses SysEx files individually.
+- New PokeSynth factory patches and Basic Synth Kit.
+- Added an audio-reactive oscilloscope and updated spectrum landscape.
+- Repositioned performance indicators and removed duplicate BPM.
+
+## V2.02
+
+- Removed the obsolete Wavetable track and its sample folder; new projects use PokeFM.
+
+## V2.0
+
+**A major update is here!** PokeSequencer has a new look and powerful new
+instruments for creating and performing music.
+
+- Expanded the bass synth into PokeSynth with two oscillators and three parameter pages.
+- Added six-operator PokeFM with parameter pages and DX7/Dexed SysEx import.
+- Added Tape Machine, Studio Forge and Ion Console themes.
+- Added an audio-reactive visualizer screensaver.
+- Added a four-second boot animation with a fading logo and rotating LEDs.
+- Removed bundled example projects.
+
 ## V1.75
 
-- The screensaver starts after 15 seconds; redundant cafe rain drawing is reduced.
+- The screensaver starts after 15 seconds.
 - Added Performance Mode, with one pad per track and changes quantized to the
   next bar while playing; it keeps the screensaver off while open.
-- Granular parameters now include kick-triggered sidechain ducking, clock rate
-  and grain layers. Audio IN mute/solo also controls MIDI audibility.
-- Added piano-roll note deletion and MIDI note audition, plus a prompt to enable
-  USB Audio IN when a USB MIDI device connects.
-- The granular menu remains usable in Random flow, disabled waveform controls
-  are skipped, and Edit Rhythm has five X-button presets.
-- Tracks and the main mixer show the quarter-note beat in 4/4; USB connection
-  status is centered below the two MIDI / USB controls without a status bar.
-- Replaced the illustrated rainy cafe with an original photorealistic scene;
-  animated rain and lightning remain.
-- Fixed the Clear Project main-menu action so it opens its confirmation dialog.
-- Granular grains can last up to four seconds, cross slice boundaries and use
-  up to four simultaneous layers. Hold X on SAMPLE to preview.
-- Random flow varies multiple settings in sync with the project BPM; Wow &
-  Flutter now processes the combined grain output.
-- Added granular Wow & Flutter and a Tracking switch for occasional tape-like
-  reverse playback.
-- Main mixer D-pad volume steps are now 1% horizontally and 10% vertically.
-- Sample kick pitch now displays cent adjustments; synth drum changes update
-  playing voices immediately.
-- Enlarged the piano roll and show up to 16 steps per page.
-- Added mute and solo controls for instrument channels in the main mixer.
-- Added the 808, Acoustic and Linndrum sample drumkits; custom kits can be
-  added as folders in `samples/drum/`.
-- Added clap to all drumkits and per-voice effect bypass with X.
-- Sample kits come first in the kit selector; sample decay is now effective
-  even on short samples. Saving does not overwrite WAV files.
-- The default Gnarly bass patch now starts with Attack at 0%.
+- Expanded Granular with sidechain, longer grains, layers, rhythm presets,
+  sample preview, Random flow, Wow & Flutter and Tracking.
+- Improved the piano roll, including note deletion, MIDI audition and 16 steps
+  per page.
+- Added the 808, Acoustic and Linndrum sample kits, custom kit support, clap
+  and per-voice effects bypass.
+- Added mixer mute/solo and beat indicators, and refined volume and drum pitch
+  controls. Audio IN mute/solo also controls MIDI audibility.
+- Improved USB connection feedback and fixed Clear Project confirmation.
 
 ## V1.64 Beta
 
@@ -49,7 +73,7 @@
 
 ## V1.60 Beta
 
-- The Synthwave car stays in its new lane after overtaking.
+- Synthwave screensaver updated.
 
 ## V1.58 Beta
 
@@ -87,8 +111,7 @@
 - Shift the complete kick in semitones and cents; pitch also affects duration.
 - Piano-roll previews work during playback; equal bass detune values return to
   the clean aligned sound.
-- Outsequenced! uses 256×256 sun, palm and road artwork, a round sun and
-  lane-aware traffic.
+- Outsequenced! screensaver updated.
 - Older projects load with the new granular track inserted.
 - Reordered the main, drum, bass and wavetable menus; bass PATCH opens the
   patch library. The main mixer includes granular.
@@ -105,22 +128,14 @@
 
 - Fixed an ARM64 build compatibility issue that could prevent startup on KNULLI.
 - Moved MIDI Clock and USB MIDI connection status into the new submenu.
-- Dust Circuit and Glass Pulse have more distinct drum sounds and factory
-  settings; the Afterglow kit retains its other characteristics.
-- Kick pitch has a faster initial sweep and shows the nearest note and cents,
-  with fine and coarse continuous adjustment.
-- Pad uses a looped CC0 bowed-cello recording, a softer attack and long sustain.
-- The main mixer's faders and dBFS meters are vertical, and the Delay Ping-pong
-  label matches the other effect labels.
-- Shimmer uses polyphonic octave-up pitch shifting, following individual notes
-  and chords rather than estimating a musical key.
+- Improved drum sounds and kick tuning; updated the Pad sample.
+- Refined mixer, effects and polyphonic Shimmer.
 
 ## V1.14 Beta
 
 ### Added
 
-- PANTA screensaver with an N and planet spinning around a vertical axis,
-  speeding up on the beat, and stars that sparkle on the beat.
+- PANTA screensaver added.
 
 ### Changed
 
@@ -135,8 +150,6 @@
   selected track's drum steps or piano-roll notes.
 - Dotted delay rates (D), such as 1/8D, and a separate Reverb Tail control for
   reverb decay. Delay Tail continues to control delay repeats.
-- Occasional lightning on the beat in the rainy café, with an analogue clock
-  following system time.
 
 ### Changed
 
@@ -148,8 +161,6 @@
 - The Pad wavetable has a longer release. Baby blue was renamed Baby Blues.
 - Effect controls are grouped more clearly: the separate delay and reverb
   tails appear beneath their respective effects.
-- Removed the man and cat from the café animation; the rainy window and
-  steaming coffee remain.
 
 ## V1.1 Beta
 
@@ -165,9 +176,8 @@
 - The cursor follows the active sequencer page during playback; the wavetable
   sample appears on its track. Bananarama uses the mockup colours and the
   previous theme is named Radiation.
-- Rounded GUI panels and more consistent control hints. Outsequenced! received
-  more detailed vehicles; play/pause leaves the screensaver open. The Dutch
-  flag animation was removed.
+- Rounded GUI panels and more consistent control hints. Screensaver playback
+  controls updated; Dutch flag screensaver removed.
 
 ## Between V1.01 and V1.1: intermediate updates
 

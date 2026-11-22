@@ -1,4 +1,4 @@
-# PokeSequencer V1.75
+# PokeSequencer V2.06
 
 PokeSequencer is a groovebox and MIDI sequencer for the Anbernic RG40XXV
 running KNULLI. Make drum patterns, bass lines and melodies, or control
@@ -12,9 +12,8 @@ external instruments. See [What's New](./What's%20New.md) for version history.
    from **Ports**.
 
 Projects, drumkits and patches are stored in `PokeSequencer/saves/`. Keep and
-back up this folder and your samples when updating or reinstalling. The
-distribution includes DEMO-SONG PANTA in project slot 1; do not overwrite
-existing saves when updating. On the
+back up this folder and your samples when updating or reinstalling. Do not
+overwrite existing saves when updating. On the
 first launch, saves from the former KNULLI user-data location are copied
 without overwriting existing slots; the originals are left in place. If a
 slot already exists in both locations, the new location takes precedence.
@@ -22,9 +21,11 @@ slot already exists in both locations, the new location takes precedence.
 ## Getting started
 
 A pattern consists of repeating steps; **BPM** sets the speed. A project starts
-with four fixed tracks: **Drums**, **Bass Synth**, **Wavetable Synth** and
+with four fixed tracks: **Drums**, **PokeSynth**, **PokeFM** and
 **Granular**. Use
 **Add MIDI Track** to add up to ten MIDI tracks.
+Menu text is displayed in uppercase to match the supplied pixel font; saved
+names and filenames retain their original spelling.
 
 1. Select a track in **Tracks** with B. Toggle drum steps, add piano-roll
    notes, or open the granular waveform.
@@ -32,7 +33,7 @@ with four fixed tracks: **Drums**, **Bass Synth**, **Wavetable Synth** and
 3. Return to Tracks and press **Select** for the main menu to save your
    project or adjust the tempo.
 
-## Controls
+## General controls
 
 | Button | Action |
 | --- | --- |
@@ -45,23 +46,57 @@ with four fixed tracks: **Drums**, **Bass Synth**, **Wavetable Synth** and
 | Start | Play or pause; restarting begins at step 1 |
 | X / Y in Tracks | Mute / solo the selected track |
 
+## Saving, loading and exiting
+
+From Tracks, press **Select** for the main menu. Under **LOAD / SAVE PROJECT**,
+choose a project slot to save or load. There are ten project slots; replacing
+one requires confirmation. **CLEAR PROJECT** clears the current project after
+confirmation, but does not delete saved slots. Back up your samples too:
+projects reference files rather than embedding their audio.
+
+Drumkits, PokeSynth patches and PokeFM patches each have ten separate slots.
+Three drumkit slots are locked factory kits. PokeSynth slot 1 is the locked
+Basic Bass Patch; slots 2–5 initially contain examples and can be overwritten.
+PokeFM has ten user slots. Use **SAVE DRUMKIT** or
+**SAVE PATCH** in the relevant track menu; load with **LOAD DRUMKIT**,
+**LOAD PATCH** or, for PokeSynth, **PATCH**. Confirm before overwriting.
+After loading a kit, patch or SysEx voice, its editor opens directly.
+In the PokeSynth load browser, X loads a previous slot-1 file and Y loads
+the old legacy save, if present. Neither file is deleted or overwritten;
+save the loaded sound to another slot to keep it alongside the factory patch.
+Choose **EXIT POKESEQUENCER** in the main menu and confirm to exit; save first
+if you want to keep your changes.
+
+## Main menu and shared features
+
+The main menu offers BPM, project loading/saving and clearing, **MAIN MIXER**,
+**PERFORMANCE MODE**, **MIDI / USB OPTIONS**, **THEME**, **ABOUT** and exit.
+The mixer controls built-in track volumes and, when enabled, USB Audio IN.
+X and Y control mute and solo, which are mutually exclusive per track.
+Hold B and press left/right for 1% volume steps or up/down for 10% steps.
+Performance Mode switches tracks with pads; during playback, B changes take
+effect at the next bar. X mutes and Y solos the selected track immediately.
+Each pad shows the current step within its current group of 16.
+
 A screensaver appears after 15 seconds of inactivity during playback. B cycles
 animations; A or the D-pad returns to the previous screen. Start still controls
 playback.
+The screensavers are, in order: oscilloscope, cassette, reel-to-reel, Mirror EQ,
+spectrum landscape, drum balls and PANTA. The oscilloscope, Mirror EQ and
+spectrum landscape react to actual audio output, including monitored USB input.
 Performance Mode, available from the main menu, provides colored pads for each
 track. While playing, pad changes take effect at the next bar; the screensaver
 stays disabled while Performance Mode is open. Start still controls play/pause.
-The original cassette and reel-to-reel animations turn during playback and stop
-on pause. The rainy cafe uses a photorealistic scene with animated rain and
-lightning.
+The cassette and reel-to-reel mechanisms gradually accelerate and coast to a
+stop when playback is paused.
 
-## Sounds, patterns and saving
+## Patterns, arpeggiator and effects
 
-The drum, bass, wavetable and MIDI menus provide pattern-length settings and **Clear Pattern** (drums:
+The drum, PokeSynth, PokeFM and MIDI menus provide pattern-length settings and **Clear Pattern** (drums:
 **Clean Pattern**), which
 clears only that track after confirmation. Drums have sound parameters
-and a per-voice mixer; synths have parameters and patches. Drums, bass, wavetable and granular each have independent delay,
-reverb and chorus. Delay offers dotted
+and a per-voice mixer; synths have parameters and patches. Drums, PokeSynth, PokeFM and granular each have independent delay,
+reverb, chorus, flanger and compression. Delay offers dotted
 rates (D), and Delay Tail and Reverb Tail are separate controls. The main menu's
 mixer controls the four instrument tracks and, when enabled, USB Audio IN.
 Select an instrument channel and use X for mute or Y for solo, just as on
@@ -73,7 +108,37 @@ Audio IN has its own monitor volume and post-fader dBFS meter; the volume is
 kept for the current app session and does not affect USB recordings. The main
 menu also offers a theme selector.
 Select **PATTERN LENGTH** and press B to cycle through lengths, or hold B
-and use the D-pad to adjust in either direction.
+and use the D-pad to adjust in either direction: 4, 8, 16, 32, 48 or 64 steps.
+The drum grid and piano roll distinguish groups of four steps.
+
+An **arpeggiator** plays entered notes in sequence. Its menu offers an on/off
+switch, **RATE** and **TYPE** (up, up/down, down/up, round or random); up to
+three tracks can use it simultaneously. **FX** has three pages: delay and
+reverb, chorus and flanger, and compression and sidechain. Use L/R to switch
+pages, B to toggle switches, and hold B with the D-pad to adjust knobs.
+Shimmer can be enabled for any reverb size. Flanger rate follows the same
+tempo divisions as delay. Effects are stored with projects and patches/kits.
+
+## Step sequencer: making drum patterns
+
+A step sequencer divides a repeating pattern into steps. Each row is a drum
+voice, and each column is a moment when that voice can sound. In **Tracks**,
+open the drum track with B. Move with the D-pad and press B to toggle a step.
+Hold B and move left/right to switch several steps in the same row. Start
+plays or pauses; **Select** opens the drum menu. X toggles effects for the
+selected voice.
+
+## Drums
+
+The drum track combines seven voices with its own pattern, parameters, mixer
+and effects. **Sample kits** play WAV recordings; **synth kits** generate
+drum sounds using synthesis.
+
+In the drum menu, **DRUMKIT** selects a kit; **SAVE DRUMKIT** and
+**LOAD DRUMKIT** manage slots. **PATTERN LENGTH** changes the length,
+**CLEAN PATTERN** clears the rhythm after confirmation, **PARAMETERS** edits
+decay and pitch or tone per voice, **FX** opens effects and **DRUM MIXER**
+controls the individual voices.
 
 The drumkit selector cycles through sample kits first, followed by the synth kits;
 selecting a kit automatically selects its engine. The included sample kits are
@@ -96,7 +161,21 @@ sample. Missing or invalid files are reported and that voice stays silent.
 Projects and saved kits store folder names and settings, not the audio; back up
 the sample folders alongside your saves. Saving a kit never overwrites WAV files.
 
-The bass, wavetable and MIDI menus offer **Arpeggiator**, **Ghost Notes** and
+The synth kick Pitch control shifts the complete sound, including the click,
+by up to one octave in either direction. Hold B and use left/right for one
+cent or up/down for one semitone. The nearest note and deviation are shown.
+Pitch also changes the kick's duration. The sample kick uses the same
+increments and displays its pitch offset in cents.
+
+## Piano roll: melodies and patterns
+
+The piano roll places steps horizontally and pitches vertically. Open the
+PokeSynth, PokeFM or MIDI track from Tracks. Move to a cell with the D-pad,
+press B to place a note and hold B with the D-pad to adjust length or pitch.
+Press B on an existing note to delete it; keep holding B and move to delete
+more notes. A goes back and Select opens the track menu.
+
+The PokeSynth, PokeFM and MIDI menus offer **Arpeggiator**, **Ghost Notes** and
 pattern copy/paste. Up to three arpeggiators can be active at once.
 Ghost notes are silent guides. Copy from the source track's menu and paste in
 the destination track's menu: **paste replaces all existing destination
@@ -107,37 +186,60 @@ track's vertical position while the project is open. Hold B on an occupied
 note and move the D-pad to delete notes. On a MIDI track, holding B previews
 the note on the connected instrument when USB Audio IN is enabled. When a loaded track is
 opened for the first time, it focuses on an existing note if there is one.
+Previews for built-in instruments remain audible during playback.
 
-The synth kick Pitch control shifts the complete sound, including the click, by up to
-one octave in either direction. Hold B and use left/right for one cent or
-up/down for one semitone. The nearest note and deviation are also shown.
-The sample kick uses the same increments and displays its pitch offset in cents.
-Pitch-shifting also changes the kick's duration. Piano-roll note previews for
-the built-in instruments remain audible during playback. Equal bass oscillator
-detune values gradually return to the clean, aligned sound.
-The default Gnarly bass patch starts with Attack at 0%; a 2 ms ramp prevents clicks.
-The Shimmer reverb shifts the incoming notes up one octave.
+## PokeSynth
 
-Projects, drumkits, bass patches and wavetable patches each have ten slots.
-Project slots contain only saved projects; synth patches have five examples
-and five user slots, and drumkits have three locked factory kits and seven
-user slots. Saving asks before
-overwriting. **Clear Project** empties patterns but does not delete saved slots.
-Mute and solo cannot both be active on the same track; enabling either clears
-the other.
+PokeSynth is a monophonic two-oscillator synth for bass lines and melodies.
+Open its piano roll from Tracks and press Select for the PokeSynth menu.
+**PATCH** selects a sound and **SAVE PATCH** stores it; **PATTERN LENGTH**,
+**COPY PATTERN**, **PASTE PATTERN** and **CLEAR PATTERN** manage notes.
+**PARAMETERS**, **FX**, **ARPEGGIATOR** and **GHOST NOTES** open their
+respective functions.
 
-In the bass menu, B on **PATCH** opens the patch slots, including saved patches;
-hold B + left/right to cycle through the five built-in patches. **SAVE PATCH**
-stores a patch separately.
+PokeSynth has two oscillators with saw, pulse and triangle waves, pulse width,
+mix, octave and detune controls. Its low/high-pass filter has resonance, key
+tracking and a separate envelope. The amplifier has attack, decay, sustain and
+release; glide, LFO modulation and kick sidechain are also available. In the
+parameter screen, use L/R (Q/E on a keyboard) to switch between its three pages.
+Click the page indicator to advance with a mouse.
 
-For custom wavetable sounds, put mono or stereo WAV files up to ten seconds
-long in `samples/wavetable/`, preferably tuned to C4. Projects and patches save the
-filename and settings, not the audio; source files are never modified. See
-[samples/wavetable/README.txt](./samples/wavetable/README.txt) for sample credits.
-For compatibility, WAVs in the old `samples/` location are still selectable;
-if a name exists in both locations, the wavetable folder takes precedence.
+The three pages contain filter, oscillator detune and envelope;
+oscillator waves, mix, pulse width, glide, release and filter type; and LFO,
+octave, key tracking and filter envelope. Select a control with the D-pad and
+hold B with the D-pad to adjust it. Equal detune values gradually return to an
+aligned sound. The default Standard Bass Patch starts with Attack at 0% and a short
+click-free ramp. Press B on **PATCH** to open slots, or hold B + left/right to
+cycle through the five factory sounds.
+
+## PokeFM
+
+PokeFM is a polyphonic FM synth: six operators affect each other according to
+a chosen algorithm to create complex sounds. Open its piano roll and press
+Select for the menu. **PATCH** opens the SysEx browser, **SAVE PATCH** and
+**LOAD PATCH** manage user slots; pattern length, copy, paste, clear,
+parameters, FX, arpeggiator and ghost notes are also available.
+
+PokeFM has six operators and imports DX7-compatible single voices and 32-voice
+SysEx banks, including Dexed exports. Put `.syx` files in `patches/PokeFM/`,
+then open **PATCH** in the PokeFM menu. Choose a file first, then a voice from
+a multi-voice file; A returns to the file list. Single voices load directly.
+New projects start with PIANO 1 from `rom1a.syx`. Invalid files are reported
+and skipped; out-of-range values in otherwise valid banks are clamped and
+reported.
+Its synthesis is an approximation, so imported patches may not sound identical
+to the original instrument or Dexed. On the parameter screen, L/R (Q/E)
+changes pages and X cycles through GLOBAL and operators 1–6. Hold B and use
+the D-pad to adjust a selected control. Click the group or page heading to
+change it with a mouse. GLOBAL includes algorithm, feedback, pitch envelope,
+LFO, transpose, volume and sidechain; each operator has envelope, scaling,
+velocity, output and frequency settings.
 
 ## Granular track
+
+Granular synthesis divides a recording into small pieces (grains) that can be
+repeated, scattered or played at different speeds. Use it to create rhythms,
+textures and transformed variations from a file or USB recording.
 
 Put WAV or MP3 files in `samples/granular/` (maximum 30 seconds and 20 MiB
 per file). Select **Granular** to open its waveform, then press Select and
@@ -164,9 +266,8 @@ Pitch uses cents horizontally
 and semitones vertically; it transposes the grain content without changing the
 selected grain duration, not a full-song time-stretch.
 
-Select opens the granular menu. **PARAMETERS** opens the sidechain, clock and
-grain controls: **SIDECHAIN** ducks grains on kick hits at 0%, 10%, 50% or
-100%; **BPM SYNC** uses the project BPM; when off, **FREE BPM** controls the
+Select opens the granular menu. **PARAMETERS** opens the clock and
+grain controls: **BPM SYNC** uses the project BPM; when off, **FREE BPM** controls the
 grain clock. **RATE** selects the interval and **GRAIN LAYERS** sets the
 simultaneous grains per event. Flow
 can move forward, reverse, ping-pong, randomly, hold one slice or use the
@@ -178,17 +279,23 @@ towards the end of the slice; it is separate from Random flow, which chooses
 random slice counts, pitch, direction, size, repeats, tracking, wow/flutter,
 layers and BPM-synchronised rates. In Random flow, waveform controls other than
 Position and Flow are locked; the granular menu remains available.
+**Random Smart** also chooses random slices and grain settings, but always
+starts grains at analysed peaks on the sequencer beat grid, including with
+external MIDI clock. Smartbeat and project timing remain active in this mode;
+the saved Smartbeat and sync preferences return when it is exited. Tape
+wow/flutter is bypassed in this mode to avoid delaying the beat.
 **GRAIN LAYERS** in the menu sets one to four simultaneous grains per event.
 Smartbeat disables the Random knob and starts on the analysed
 peak nearest the slice start, or the nearest peak after the marker if that
 slice has none. If there are no analysed peaks at or after the marker, it
 plays no grains. Its
 peak-start envelope avoids fading in over the peak, which may cause clicks.
-**FX** opens the independent effects panel. Projects store filenames and
+**FX** opens the independent effects panel; its third page has the sidechain
+switch. Projects store filenames and
 settings, not audio: back up samples with projects. Old granular piano-roll
 notes no longer control this track.
 
-**RESET / NORMAL PLAY** resets the granular settings and FX, moves the marker
+**RESET SAMPLE** resets the granular settings and FX, moves the marker
 to the start and plays the complete sample once at its original speed. If
 transport is already running, it starts immediately; restarting transport
 plays it again. Changing a granular or granular FX setting exits Normal Play.
@@ -224,6 +331,22 @@ Start/Continue/Stop. Incoming MIDI notes are not recorded. The built-in
 instruments use KNULLI's selected audio output; select any USB audio output
 before launching PokeSequencer.
 
-Thank you for making music with PokeSequencer!
+A class-compliant device uses the standard USB driver without a
+device-specific driver. For example, sequence a USB synth from a MIDI track,
+synchronize a drum machine with MIDI Clock, or record a USB microphone through
+Granular. Support and latency depend on KNULLI, the adapter/hub and device.
 
-**Tomas Wille (PANTA)**
+The MIDI track menu contains **MIDI CHANNEL**, **RENAME MIDI TRACK**,
+**PATTERN LENGTH**, **COPY PATTERN**, **PASTE PATTERN**, **CLEAR PATTERN**,
+**ARPEGGIATOR** and **GHOST NOTES**. Choose **ADD MIDI TRACK** in Tracks to
+add one; press A twice on Tracks to remove the selected MIDI track.
+
+## Thank you
+
+Thank you for making music with PokeSequencer and sharing this musical journey
+with me. I wish you lots of inspiration and enjoyment!
+
+**Tomas Wille aka PANTA**
+
+[YouTube](https://www.youtube.com/@PANTA-Music) ·
+[Instagram](https://www.instagram.com/pokesequencer/)
