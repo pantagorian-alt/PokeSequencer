@@ -1,5 +1,32 @@
 # Wat is Nieuw
 
+## V2.10
+
+- De bijgewerkte PANTA-DEMOLOOP V2 meegeleverd, inclusief reservekopie.
+- De meegeleverde granular-samples vervangen door de vier actuele Anbernic-samples.
+
+## V2.08
+
+- Options toegevoegd met MIDI/USB, thema, about en blijvende A/B-spiegeling.
+- Drumswing en accentstappen toegevoegd, evenals PokeSynth Noise.
+- Pitch-envelope van PokeFM vervangen door acht klankvormende macro's.
+- Random Smart vervangen door Random + Smartbeat met beatgerichte graingrootte.
+- Random + Smartbeat varieert vooral korte en middelgrote maatvaste grains,
+  inclusief gepuncteerde ritmes, met af en toe een lange grain; vier ritmepresets
+  schakelen mee met het aantal slices en gebruiken maximaal 64 stappen.
+- Drumaccenten duidelijker hoorbaar gemaakt; gewone stappen blijven normaal.
+- Graingrootte met stappen van 50/150 ms en veiligere samplekeuze toegevoegd.
+- PANTA DEMO-LOOP V2 meegeleverd zonder bestaande projectsaves te overschrijven.
+
+- Sidechainsterkte en een British-compressormodus voor drums toegevoegd.
+- Compressorgevoeligheid en optisch geïnspireerde respons verbeterd, Bass-preset,
+  krachtigere drumcompressie en subtiele LA-2A-geïnspireerde verzadiging toegevoegd.
+- Paginakopie en handmatige paginakeuze in de pianorol toegevoegd; een volledig
+  patroon plakken neemt nu ook de patroonlengte over.
+- Performance-knoppen en voortgangslampjes gecorrigeerd.
+- Maximaal zes tracks zichtbaar in de lijst; drum-FX blijft in de mixer.
+- Per ongeluk een drumkit wisselen door alleen B te drukken voorkomen.
+
 ## V2.06
 
 - Audioreactieve Mirror EQ toegevoegd en de zeven screensavers opnieuw geordend.

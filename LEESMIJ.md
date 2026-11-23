@@ -1,4 +1,4 @@
-# PokeSequencer V2.06
+# PokeSequencer V2.10
 
 PokeSequencer is een groovebox en MIDI-sequencer voor de Anbernic RG40XXV met
 KNULLI. Maak drumritmes, baslijnen en melodieën, of stuur externe instrumenten
@@ -17,6 +17,11 @@ updates geen bestaande saves. Bij de eerste start
 worden saves uit de oude KNULLI-gebruikersmap gekopieerd zonder bestaande
 slots te overschrijven; de originelen blijven staan. Bestaat een slot op beide
 plaatsen, dan heeft de nieuwe locatie voorrang.
+PANTA-DEMOLOOP V2 staat in `saves/projects/project-01.pseq`, met een
+reservekopie in `factory-projects/`. Behoud bij updates je bestaande saves in
+plaats van de meegeleverde map eroverheen te kopiëren. Wil je bij een nieuwe
+installatie een oud slot 1 importeren, zet dan eerst het meegeleverde slot 1
+opzij: bestaande slots gaan voor op import uit de oude locatie.
 
 ## Snel beginnen
 
@@ -24,7 +29,8 @@ Een patroon bestaat uit stappen die zich herhalen; **BPM** bepaalt de snelheid.
 Het project begint met vier vaste tracks: **Drums**, **PokeSynth**,
 **PokeFM** en **Granular**. Voeg via **Add MIDI Track** maximaal
 tien MIDI-tracks toe.
-Menutekst wordt in hoofdletters weergegeven voor het aangeleverde pixellettertype;
+De lijst toont zes tracks tegelijk; scroll voor de rest. Add MIDI Track blijft
+onder de lijst staan. Menutekst wordt in hoofdletters weergegeven;
 opgeslagen namen en bestandsnamen behouden hun oorspronkelijke schrijfwijze.
 
 1. Kies in **Tracks** een track met B. Zet drumstappen aan, plaats noten in
@@ -37,7 +43,7 @@ opgeslagen namen en bestandsnamen behouden hun oorspronkelijke schrijfwijze.
 
 | Knop | Functie |
 | --- | --- |
-| D-pad | Selectie verplaatsen; in het hoofdmenu links/rechts voor BPM of thema |
+| D-pad | Selectie verplaatsen; in het hoofdmenu links/rechts voor BPM |
 | B | Bevestigen, drumstap wisselen of een noot plaatsen |
 | B vasthouden + D-pad | Waarde aanpassen; in de pianorol nootlengte of toonhoogte wijzigen |
 | B vasthouden + links/rechts in de drumsequencer | Meerdere stappen in dezelfde rij aan- of uitzetten |
@@ -70,13 +76,15 @@ sla eerst op als je wijzigingen wilt bewaren.
 ## Hoofdmenu en gemeenschappelijke functies
 
 Het hoofdmenu bevat BPM, projecten laden/opslaan of wissen, **MAIN MIXER**,
-**PERFORMANCE MODE**, **MIDI / USB OPTIONS**, **THEME**, **ABOUT** en afsluiten.
+**PERFORMANCE MODE**, **OPTIONS** en afsluiten. In Options staan achtereenvolgens
+MIDI Clock, USB-status, USB Audio IN, de blijvende A/B-spiegeling, thema en
+about. De statusbalk is niet selecteerbaar; de toetsenhulp spiegelt mee.
 In de mixer regel je het volume van de ingebouwde tracks en eventueel USB Audio
 IN. X en Y bedienen mute en solo; deze sluiten elkaar per track uit. B met
 links/rechts verandert het volume met 1%, B met omhoog/omlaag met 10%.
 In Performance Mode schakel je tracks met pads; tijdens afspelen wordt B bij
 de volgende maat uitgevoerd. X mute en Y solo werken direct voor de gekozen
-track. Elk pad toont de huidige stap binnen zijn groep van 16.
+track. De lampjes tonen de voortgang door de volledige patroonlengte van de track.
 
 Tijdens het afspelen verschijnt na 15 seconden zonder invoer een screensaver. B wisselt de
 animatie; A of de D-pad brengt je terug. Start blijft afspelen en pauzeren.
@@ -108,7 +116,7 @@ Audio IN heeft alleen volumeregeling en een eigen meeluistervolume en
 dBFS-meter na de volumeregelaar; het volume blijft tijdens de huidige
 appsessie behouden en beïnvloedt USB-opnames niet. Audio IN-mute dempt ook de
 MIDI-tracks; Audio IN-solo speelt Audio IN en MIDI-tracks af en dempt de
-ingebouwde instrumenten. Het hoofdmenu bevat ook de
+ingebouwde instrumenten. Options bevat ook de
 themakeuze.
 Houd in de hoofdmixer B vast en gebruik links/rechts voor volumestappen van 1%
 of omhoog/omlaag voor stappen van 10%.
@@ -123,6 +131,13 @@ gebruiken. **FX** heeft drie pagina's: delay en reverb, chorus en flanger,
 en compressie en sidechain. Wissel met L/R van pagina, schakel met B en houd
 B met de D-pad vast om regelaars aan te passen. Shimmer werkt bij elke
 reverbgrootte. De flangersnelheid gebruikt dezelfde tempowaarden als delay.
+Sidechain voor PokeSynth, PokeFM en Granular heeft off, light, normal en
+heavy kick-ducking. Drum FX heeft in plaats daarvan British mode, met een
+snellere en sterkere compressie; draai compression open om dit te horen.
+De compressor-preset DRUMS benadrukt de aanslag met een langzamere attack en
+make-up gain; BASS gebruikt een snellere attack en langere release voor een
+pompend geluid. De optisch geïnspireerde respons en subtiele verzadiging
+zijn geïnspireerd op de LA-2A; dit is een benadering, geen exacte emulatie.
 Effectinstellingen worden met projecten en patches/drumkits opgeslagen.
 
 ## Stepsequencer: drumritmes maken
@@ -130,9 +145,10 @@ Effectinstellingen worden met projecten en patches/drumkits opgeslagen.
 Een stepsequencer verdeelt een herhalend patroon in stappen. Iedere rij is een
 drumstem; iedere kolom is een moment waarop die stem kan klinken. Kies in
 **Tracks** de drumtrack met B. Verplaats de cursor met de D-pad en zet met B
-een stap aan of uit. Houd B vast en beweeg links/rechts om meerdere stappen
+een stap aan of uit. Y plaatst een duidelijk luidere accentstap; B of Y
+verwijdert deze weer. Gewone stappen behouden hun normale velocity. Houd B vast en beweeg links/rechts om meerdere stappen
 in dezelfde rij te schakelen. Start speelt of pauzeert; **Select** opent het
-drummenu. Met X zet je effecten voor de gekozen stem aan of uit.
+drummenu.
 
 ## Drums
 
@@ -144,7 +160,8 @@ In het drummenu kies je met **DRUMKIT** een kit; **SAVE DRUMKIT** en
 **LOAD DRUMKIT** beheren de slots. **PATTERN LENGTH** bepaalt de lengte,
 **CLEAN PATTERN** wist het ritme na bevestiging, **PARAMETERS** bewerkt decay
 en pitch of tone per stem, **FX** opent de effecten en **DRUM MIXER** regelt
-de afzonderlijke stemmen.
+de afzonderlijke stemmen. **SWING** in PARAMETERS verschuift de offbeat-achtsten
+en tussenliggende zestienden van 0 tot 100 in stappen van 10.
 
 De drumkitkeuze toont eerst de samplekits en daarna de synthkits; de juiste engine
 wordt automatisch gekozen. Meegeleverde samplekits zijn 808, Acoustic en
@@ -152,7 +169,7 @@ Linndrum. Beide engines hebben zeven stemmen: kick, snare, gesloten en open
 hi-hat, hoge en lage tom en clap. Het patroon blijft gelijk bij wisselen;
 synth- en sample-instellingen worden afzonderlijk bewaard.
 
-Selecteer in de drummixer of stepsequencer een stem en druk op X om die door de
+Selecteer in de drummixer een stem en druk op X om die door de
 drumeffecten te sturen of rechtstreeks te laten klinken. Hiermee schakel je alle
 drumeffecten tegelijk voor die stem; bestaande delay- en reverbstaarten mogen
 uitklinken. De instelling wordt opgeslagen in projecten en drumkits.
@@ -188,9 +205,11 @@ De PokeSynth-, PokeFM- en MIDI-menu's bieden **Arpeggiator**, **Ghost Notes** en
 kopiëren en plakken van patronen. Er kunnen maximaal drie arpeggiators tegelijk aan
 staan. Ghost notes zijn stille hulplijnen. Kopieer noten via het menu van de
 brontrack en plak via het menu van de doeltrack: **plakken vervangt alle
-bestaande noten** van de doeltrack. Noten buiten de doelpatroonlengte worden
-overgeslagen of ingekort. De kopie verdwijnt bij het afsluiten. De pianorol
-toont maximaal 16 stappen per pagina en volgt de pagina tijdens afspelen. Hij
+bestaande noten** van de doeltrack en neemt de gekopieerde patroonlengte over.
+De kopie verdwijnt bij het afsluiten. De pianorol toont maximaal 16 stappen
+per pagina. Met L/R wissel je pagina; X kopieert en Y plakt de huidige pagina
+en vervangt noten die daar beginnen. Handmatig wisselen tijdens afspelen
+onderbreekt het volgen tot je op Start drukt. Hij
 onthoudt per track de verticale positie zolang het project open is. Houd B op
 een bestaande noot vast en verplaats met de D-pad om noten te verwijderen. Op
 een MIDI-track beluistert B ingedrukt de noot via het aangesloten instrument
@@ -217,7 +236,7 @@ tussen de drie pagina's. Met de muis ga je verder door op de pagina-indicator
 te klikken.
 
 De drie pagina's bevatten achtereenvolgens filter, oscillator-detune en envelope;
-oscillatorvormen, mix, pulsbreedte, glide, release en filtertype;
+oscillatorvormen, mix, pulsbreedte, glide, noise en filtertype;
 en LFO, octaaf, key tracking en filter-envelope. Selecteer een regelaar met
 de D-pad en houd B met de D-pad vast om hem te wijzigen. Gelijke
 detune-waarden keren geleidelijk terug naar een gelijklopende klank.
@@ -245,8 +264,10 @@ klanken kunnen anders klinken dan op het oorspronkelijke instrument of in Dexed.
 Wissel in het parameterscherm met L/R (Q/E) van pagina en met X tussen GLOBAL
 en operator 1–6. Houd B vast en gebruik de D-pad om een instelling te wijzigen.
 Met de muis kun je op de groep of pagina-indicator klikken. GLOBAL bevat onder
-meer algoritme, feedback, pitch-envelope, LFO, transpose, volume en sidechain;
-iedere operator heeft envelope, scaling, velocity, output en frequentie-instellingen.
+meer algoritme, feedback, LFO, transpose, volume en acht klankmacro's:
+Brightness, Attack, Decay, Sustain, Release, Velocity, Harmonics en Detune.
+De macro's wijzigen de operatorinstellingen; iedere operator heeft ook
+afzonderlijke envelope-, scaling-, velocity-, output- en frequentie-instellingen.
 
 ## Granular-track
 
@@ -256,7 +277,7 @@ texturen en vervormde variaties uit een bestaande opname of USB-opname.
 
 Plaats WAV- of MP3-bestanden in `samples/granular/` (maximaal 30 seconden en
 20 MiB per bestand). Kies **Granular** om direct de waveform te openen. Druk
-op Select en kies bij **SAMPLE** een bestand met B of B + links/rechts.
+op Select en kies bij **SAMPLE** een bestand met B + links/rechts.
 De keuzelijst bevat ook **NONE**, waarmee je de granular-sample leegmaakt. Audio
 wordt voor afspelen naar mono omgezet; het origineel blijft ongewijzigd.
 Start speelt of stopt met het project; opnieuw starten begint de grainreeks
@@ -276,7 +297,8 @@ vanaf de blauwe marker tot het einde van de sample. Slices worden over dat
 gebied verdeeld en bewegen dus mee met de marker. Geen grain leest audio
 vóór de marker. De andere lijnen tonen het
 brongebied van de huidige grain en de bewegende afspeelpositie. Size loopt van
-20 ms tot 4 seconden. Grains kunnen voorbij een slicegrens lopen en herhalen
+0 tot 4000 ms. Houd B vast en gebruik links/rechts voor stappen van 50 ms of
+omhoog/omlaag voor stappen van 150 ms. Grains kunnen voorbij een slicegrens lopen en herhalen
 bij het einde van het afspeelgebied. Oude opgeslagen instellingen behouden hun duur.
 Pitch verandert
 met links/rechts in cents en omhoog/omlaag in halve tonen. De inhoud wordt
@@ -290,25 +312,32 @@ dan bepaalt **FREE BPM** de grainklok. **RATE** bepaalt de tussenruimte en
 Flow gaat vooruit, achteruit, pingpong, random, houdt één slice vast of gebruikt
 de ritme-editor. Met **EDIT SLICES** pas je voorgestelde grenzen aan;
 **AUTO SLICES** vervangt ze door nieuwe voorstellen. In **EDIT RHYTHM** kies
-je slices of rusten; met X wissel je tussen vijf ritmevoorbeelden, waarna je
-de stappen ook handmatig kunt aanpassen. De **Random**-knop verschuift grain-startpunten willekeurig
+je slices of rusten; met X wissel je tussen vier ritmevoorbeelden voor het
+gekozen aantal slices. Deze kun je handmatig aanpassen. Herkende presets
+schakelen automatisch mee met het aantal slices; eigen patronen blijven behouden
+en slicenummers worden binnen het nieuwe bereik teruggebracht.
+Bij 64 slices hebben de presets 64 stappen, verdeeld over twee pagina's die
+automatisch volgen wanneer je door het patroon beweegt.
+De **Random**-knop verschuift grain-startpunten willekeurig
 vooruit richting het einde van de slice. Random flow kiest willekeurig aantallen
 slices, pitch, richting, grootte, herhalingen, tracking, wow/flutter, lagen en
 BPM-gesynchroniseerde snelheden. De overige knoppen op het waveform-scherm zijn
-dan vergrendeld, behalve Position en Flow; het granular-menu blijft beschikbaar.
-**Random Smart** kiest ook willekeurige slices en graininstellingen, maar
-start grains altijd op geanalyseerde pieken en op het stapraster van de
-sequencer, ook bij externe MIDI-klok. Smartbeat en het projecttempo blijven
-actief; na verlaten van deze modus komen de opgeslagen Smartbeat- en
-syncvoorkeuren terug. Wow/flutter wordt hierbij overgeslagen om de beat niet
-te vertragen.
+dan vergrendeld, behalve Position, Flow en Smartbeat; het granular-menu blijft beschikbaar.
+Schakel bij Random flow **Smartbeat** in om grains op geanalyseerde pieken en
+het stapraster van de sequencer te starten, ook bij externe MIDI-klok. De
+graingrootte varieert willekeurig van een zestiende noot tot veelvouden van
+de beat, maximaal vier seconden. Korte en middelgrote grains, inclusief
+gepuncteerde ritmes, komen vaker voor; lange grains zijn zeldzaam.
+Elke grain loopt door tot de volgende
+maatvaste gebeurtenis, ook als onsets dicht bij elkaar liggen.
+Wow/flutter wordt hierbij overgeslagen om de beat niet te vertragen.
 Met **GRAIN LAYERS** in het menu kies je één tot vier gelijktijdige grains.
 Smartbeat schakelt de Random-knop uit en start op de geanalyseerde piek het
 dichtst bij de slice-start, of op de dichtstbijzijnde piek na de marker als
 die slice geen piek bevat. Zijn er geen geanalyseerde pieken op of na de
 marker, dan worden geen grains afgespeeld.
 De piek wordt niet ingefade, waardoor een klik mogelijk is.
-**FX** opent het eigen effectenpaneel; op pagina 3 staat de sidechainschakelaar.
+**FX** opent het eigen effectenpaneel; op pagina 3 staat de sidechainregelaar.
 Projecten bewaren bestandsnaam en instellingen, niet de audio: bewaar dus
 ook de samples. Oude granular-pianorolnoten sturen deze track niet meer aan.
 
@@ -319,7 +348,7 @@ transport speelt de sample opnieuw. Een granular- of granular-FX-instelling
 wijzigen verlaat Normal Play. De gekozen sample en trackmixer blijven behouden.
 
 Voor opnemen via een class-compliant USB-ingang schakel je eerst
-**MIDI / USB OPTIONS → USB AUDIO IN** in. Kies daarna **RECORD USB AUDIO** in het
+**OPTIONS → USB AUDIO IN** in. Kies daarna **RECORD USB AUDIO** in het
 granular-menu. Druk op B om te stoppen (of wacht op de limiet van 30 seconden).
 Kies in het trimscherm START of END en houd B + D-pad vast om de grenzen te
 verplaatsen. Kies **NAME AND SAVE** om het geselecteerde deel als stereo-WAV
@@ -333,7 +362,7 @@ Sluit een class-compliant USB-MIDI-apparaat aan via USB-OTG; eventueel is een
 adapter of hub nodig. Kies op elke MIDI-track hetzelfde kanaal als op het
 ontvangende instrument. MIDI-tracks sturen noten, maar maken zelf geen geluid.
 Sluit de audio-uitgang van het externe instrument apart aan, of gebruik
-**MIDI / USB OPTIONS → USB AUDIO IN** voor een class-compliant USB-audio-ingang van
+**OPTIONS → USB AUDIO IN** voor een class-compliant USB-audio-ingang van
 bijvoorbeeld een synth, interface of microfoon. De ingang wordt met de gekozen
 audio-uitgang gemengd en staat bij het starten uit. Sluit één USB-audio-ingang
 tegelijk aan; bij geen of meerdere ingangen verschijnt een melding. Het
@@ -344,7 +373,7 @@ Opnames gebruiken de opgenomen audio, niet de monitor-resampling of het
 meeluistervolume. Gebruik een koptelefoon en begin zacht om rondzingen te
 voorkomen; schakel USB-audioloopback van het instrument zo nodig uit.
 
-In **MIDI / USB OPTIONS** gebruikt **MIDI Clock: INTERNAL** het eigen tempo en verstuurt
+In **OPTIONS** gebruikt **MIDI Clock: INTERNAL** het eigen tempo en verstuurt
 Start, Stop en MIDI Clock. **EXTERNAL** volgt een externe MIDI-klok en
 Start/Continue/Stop. Inkomende MIDI-noten worden niet opgenomen.
 De ingebouwde instrumenten gebruiken de door KNULLI gekozen audio-uitgang;

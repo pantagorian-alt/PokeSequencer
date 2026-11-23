@@ -1,5 +1,32 @@
 # What's New
 
+## V2.10
+
+- Bundled the updated PANTA-DEMOLOOP V2 project and its factory backup.
+- Replaced the bundled granular samples with the four current Anbernic samples.
+
+## V2.08
+
+- Added Options with MIDI/USB, theme, about and persistent A/B mirroring.
+- Added drum swing and accented steps, and PokeSynth Noise.
+- Replaced the PokeFM pitch envelope controls with eight sound-shaping macros.
+- Replaced Random Smart with Random + Smartbeat and refined beat-aware grain sizes.
+- Random + Smartbeat favours varied short and medium grid-aligned grains, with
+  occasional long grains and dotted rhythms; rhythm presets
+  adapt to each slice count, with four patterns and up to 64 steps.
+- Made drum accents more audible while keeping normal steps at normal velocity.
+- Added 50/150 ms grain-size adjustment and safer sample selection.
+- Bundled PANTA DEMO-LOOP V2 without overwriting existing project saves.
+
+- Added sidechain intensity selection and a drum-only British compressor mode.
+- Improved compressor sensitivity and optical-style response, added a Bass
+  preset, punchier Drums compression and subtle LA-2A-inspired saturation.
+- Added piano-roll page copy/paste and manual page selection; full-pattern
+  paste now includes the copied length.
+- Corrected Performance Mode controls and pattern-progress lamps.
+- Limited the track list to six visible tracks; drum FX controls remain in the mixer.
+- Prevented an accidental B press from cycling drumkits.
+
 ## V2.06
 
 - Added the audio-reactive Mirror EQ and reordered the seven screensavers.
